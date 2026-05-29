@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <!-- Configurações solicitadas para gerar um PublishSingleFile autônomo (Self-Contained) -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <PublishTrimmed>false</PublishTrimmed>
+    <IncludeAllContentForSelfContained>true</IncludeAllContentForSelfContained>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <!-- Incorpora a imagem da logo diretamente dentro do arquivo executável único (.exe) como recurso embutido (EmbeddedResource) -->
+  <ItemGroup>
+    <EmbeddedResource Include="imgs\image_white.png" />
+  </ItemGroup>
+
+</Project>
