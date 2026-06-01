@@ -31,6 +31,7 @@ partial class Form1
         this.listArquivos = new System.Windows.Forms.ListBox();
         this.lblDestino = new System.Windows.Forms.Label();
         this.txtDestino = new System.Windows.Forms.TextBox();
+        this.chkSubstituirSempre = new System.Windows.Forms.CheckBox();
         this.gbCredenciais = new System.Windows.Forms.GroupBox();
         this.lblNovoUsuario = new System.Windows.Forms.Label();
         this.txtNovoUsuario = new System.Windows.Forms.TextBox();
@@ -140,6 +141,7 @@ partial class Form1
         this.gbOrigemDestino.Controls.Add(this.listArquivos);
         this.gbOrigemDestino.Controls.Add(this.lblDestino);
         this.gbOrigemDestino.Controls.Add(this.txtDestino);
+        this.gbOrigemDestino.Controls.Add(this.chkSubstituirSempre);
         this.gbOrigemDestino.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         this.gbOrigemDestino.ForeColor = System.Drawing.Color.FromArgb(45, 55, 72);
         this.gbOrigemDestino.Location = new System.Drawing.Point(12, 12);
@@ -213,6 +215,18 @@ partial class Form1
         this.txtDestino.Size = new System.Drawing.Size(462, 25);
         this.txtDestino.TabIndex = 4;
         this.txtDestino.Text = "C$\\Users\\Public\\Desktop";
+        // 
+        // chkSubstituirSempre
+        // 
+        this.chkSubstituirSempre.AutoSize = true;
+        this.chkSubstituirSempre.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        this.chkSubstituirSempre.ForeColor = System.Drawing.Color.FromArgb(74, 85, 104);
+        this.chkSubstituirSempre.Location = new System.Drawing.Point(260, 27);
+        this.chkSubstituirSempre.Name = "chkSubstituirSempre";
+        this.chkSubstituirSempre.Size = new System.Drawing.Size(185, 19);
+        this.chkSubstituirSempre.TabIndex = 5;
+        this.chkSubstituirSempre.Text = "Substituir arquivos existentes";
+        this.chkSubstituirSempre.UseVisualStyleBackColor = true;
 
         this.gbCredenciais.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -491,4 +505,5 @@ partial class Form1
     private System.Windows.Forms.Button btnIniciar;
     private System.Windows.Forms.ProgressBar progressBar;
     private System.Windows.Forms.Label lblProgressPercent;
+    private System.Windows.Forms.CheckBox chkSubstituirSempre;
 }

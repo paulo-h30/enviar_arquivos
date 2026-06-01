@@ -205,6 +205,7 @@ namespace Enviar_dev
             LogInfo("--------------------------------------------------------------------------------");
 
             string destinoRaw = txtDestino.Text.Trim();
+            bool sempreSubstituir = chkSubstituirSempre.Checked;
             
             List<RedeCredencial> credenciaisLocais = _credenciais.ToList();
             List<string> arquivosOrigem = listArquivos.Items.Cast<string>().ToList();
@@ -306,6 +307,11 @@ namespace Enviar_dev
                                 {
                                     realizarCopia = true;
                                     LogInfo($"[{maquina}] Arquivo '{nomeArquivo}' inexistente no destino. Copiando...");
+                                }
+                                else if (sempreSubstituir)
+                                {
+                                    realizarCopia = true;
+                                    LogInfo($"[{maquina}] O arquivo '{nomeArquivo}' já existe no destino. Substituindo (Forçado)...");
                                 }
                                 else
                                 {
@@ -481,6 +487,7 @@ namespace Enviar_dev
             txtNovaSenha.ReadOnly = !enabled;
             btnAdicionarCredencial.Enabled = enabled;
             flpCredenciais.Enabled = enabled;
+            chkSubstituirSempre.Enabled = enabled;
 
             btnIniciar.Text = enabled ? "⚡ INICIAR TRANSFERÊNCIA" : "⏳ EM EXECUÇÃO...";
             btnIniciar.BackColor = enabled ? Color.FromArgb(49, 151, 149) : Color.FromArgb(160, 174, 192);
